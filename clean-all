@@ -5,9 +5,8 @@
 # rm -rf on $KEY_DIR so be careful!
 
 if [ "$KEY_DIR" ]; then
-    rm -rf "$KEY_DIR"
-    mkdir "$KEY_DIR" && \
-        chmod go-rwx "$KEY_DIR" && \
+    rm -rf "$KEY_DIR/*"
+    chmod go-rwx "$KEY_DIR" && \
         touch "$KEY_DIR/index.txt" && \
         echo 01 >"$KEY_DIR/serial"
 else
